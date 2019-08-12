@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+            integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+            crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<input type="search" id="search-value"><button id="search-btn">검색</button>
+</body>
+</html>
+
+<script>
+
+    var apiKey = 'RGAPI-84f71679-13a0-4fdc-9e4d-4804fab96f39';
+    $(document).ready(function () {
+
+        $('#search-btn').click(function () {
+
+            var search = $('#search-value').val();
+            console.log(search);
+
+            fetch('https://kr.api.riotgames.com/lol/summoner/v4/summoners/by-name/sktt1faker?api_key=RGAPI-1860de6f-b9fc-42e4-b39e-a7869b6a608e')
+                .then(res =>{
+                    console.log(res);
+                })
+                .catch(err =>{
+                    console.log(err);
+                })
+
+        })
+
+    })
+
+</script>
